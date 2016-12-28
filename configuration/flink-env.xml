@@ -5,9 +5,9 @@
 
   <property>
     <name>flink_log_dir</name>
-    <value>/var/log/flink</value>    
+    <value>/var/log/flink</value>
     <description>flink Log dir</description>
-  </property> 
+  </property>
 
  <property>
     <name>flink_pid_dir</name>
@@ -20,16 +20,16 @@
     <value>flink</value>
     <property-type>USER</property-type>
     <description>User flink daemon runs as</description>
-  </property> 
-        
+  </property>
+
   <property>
     <name>flink_group</name>
     <value>flink</value>
     <property-type>GROUP</property-type>
     <description>flink group</description>
-  </property> 
-          
-            
+  </property>
+
+
   <property>
     <name>content</name>
     <value>
@@ -55,12 +55,12 @@ parallelism.default: 1
 
 # The port under which the web-based runtime monitor listens.
 # A value of -1 deactivates the web server.
-jobmanager.web.port: 8081
+jobmanager.web.port: 12501
 
-# The port uder which the standalone web client
+# The port under which the standalone web client
 # (for job upload and submit) listens.
 
-webclient.port: 8080
+webclient.port: 12502
 
 #==============================================================================
 # Streaming state checkpointing
@@ -112,12 +112,11 @@ state.backend: jobmanager
 # You can also directly specify the paths to hdfs-default.xml and hdfs-site.xml
 # via keys 'fs.hdfs.hdfsdefault' and 'fs.hdfs.hdfssite'.
 #
-# fs.hdfs.hadoopconf: /path/to/hadoop/conf/
+fs.hdfs.hadoopconf: /etc/hadoop/conf/
 
   </value>
   <description>Template for flink-conf.yaml</description>
-  
+
   </property>
 
 </configuration>
-
