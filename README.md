@@ -7,7 +7,7 @@ More details on Flink and how it is being used in the industry today available h
 The Ambari service lets you easily install/compile Flink on HDP 2.5
 - Features:
   - By default, downloads prebuilt package of Flink 1.0, but also gives option to build the latest Flink from source instead
-  - Exposes flink-conf.yaml in Ambari UI 
+  - Exposes flink-conf.yaml in Ambari UI
 
 Limitations:
   - This is not an officially supported service and *is not meant to be deployed in production systems*. It is only meant for testing demo/purposes
@@ -26,7 +26,7 @@ Author: [Ali Bajwa](https://github.com/abajwa-hw)
 192.168.191.241 sandbox.hortonworks.com sandbox    
 ```
   - Note that you will need to replace the above with the IP for your own VM
-  
+
 - Connect to the VM via SSH (password hadoop)
 ```
 ssh root@sandbox.hortonworks.com
@@ -36,7 +36,7 @@ ssh root@sandbox.hortonworks.com
 - To download the Flink service folder, run below
 ```
 VERSION=`hdp-select status hadoop-client | sed 's/hadoop-client - \([0-9]\.[0-9]\).*/\1/'`
-sudo git clone https://github.com/abajwa-hw/ambari-flink-service.git   /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/FLINK   
+sudo git clone https://github.com/teamsoo/ambari-flink-service.git   /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/FLINK   
 ```
 
 - Restart Ambari
@@ -56,7 +56,7 @@ On bottom left -> Actions -> Add service -> check Flink server -> Next -> Next -
     - Container memory is 1024 MB
     - Job manager memory of 768 MB
     - Number of YARN container is 1
-  
+
 - On successful deployment you will see the Flink service as part of Ambari stack and will be able to start/stop the service from here:
 ![Image](../master/screenshots/Installed-service-stop.png?raw=true)
 
@@ -119,10 +119,10 @@ More details on Flink and how it is being used in the industry today available h
 
 #### Remove service
 
-- To remove the Flink service: 
+- To remove the Flink service:
   - Stop the service via Ambari
   - Unregister the service
-  
+
     ```
 export SERVICE=FLINK
 export PASSWORD=admin
